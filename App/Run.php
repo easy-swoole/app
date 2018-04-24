@@ -32,7 +32,7 @@ function releaseResource($source, $destination)
  */
 class Run
 {
-    function postCreateCmd(Event $event)
+    static function postCreateCmd(Event $event)
     {
         $easyswooleRoot     = __DIR__ . DS . '..' . DS;
         $easyswooleVendor   = $easyswooleRoot . 'vendor' . DS . 'easyswoole' . DS . 'easyswoole' . DS . 'src' . DS;
