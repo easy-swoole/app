@@ -27,7 +27,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "php vendor/bin easyswoole install"
+            "App\\Run::postCreateCmd"
         ]
     },
     "repositories": {
