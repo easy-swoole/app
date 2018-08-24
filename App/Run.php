@@ -44,6 +44,10 @@ class Run
         copy($easyswooleResource . 'Config.tpl', $easyswooleRoot . 'Config.php');
         copy($easyswooleResource . 'EasySwooleEvent.tpl', $easyswooleRoot . 'EasySwooleEvent.php');
 
+        // 新增环境配置文件
+        copy($easyswooleResource . 'dev.env', $easyswooleRoot . 'dev.env');
+        copy($easyswooleResource . 'produce.env', $easyswooleRoot . 'produce.env');
+
         // 创建临时目录
         @mkdir($easyswooleRoot . 'Temp', 0755) && chmod($easyswooleRoot . 'Temp', 0755);
         @mkdir($easyswooleRoot . 'Log', 0755) && chmod($easyswooleRoot . 'Log', 0755);
