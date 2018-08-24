@@ -15,7 +15,7 @@ function releaseResource($source, $destination)
         $filename = basename($destination);
         echo "{$filename} has already existed, do you want to replace it? [ Y / N (default) ] : ";
         $answer = strtolower(trim(strtoupper(fgets(STDIN))));
-        if (!in_array($answer, ['y', 'yes'])) {
+        if (!in_array($answer, [ 'y', 'yes' ])) {
             $replace = false;
         }
     }
@@ -34,8 +34,10 @@ class Run
 {
     static function postCreateCmd(Event $event)
     {
-        $easyswooleRoot     = __DIR__ . DS . '..' . DS;
-        $easyswooleVendor   = $easyswooleRoot . 'vendor' . DS . 'easyswoole' . DS . 'easyswoole' . DS . 'src' . DS;
+        // 此时根包已就绪 强制将管理脚本链接到EASYSWOOLE的管理脚本上
+        $easyswooleRoot = __DIR__ . DS . '..' . DS;
+        $easyswooleVendor = $easyswooleRoot . 'vendor' . DS . 'easyswoole' . DS . 'easyswoole' . DS . 'src' . DS;
+        $easyswooleBin = './vendor/easyswoole/easyswoole/bin/easyswoole';
         $easyswooleResource = $easyswooleVendor . 'Resource' . DS;
 
         // 因为全新安装 不做检查直接覆盖
@@ -50,7 +52,7 @@ class Run
         file_put_contents($easyswooleRoot . 'easyswoole.install', 'installed at ' . date('Y-m-d H:i:s'));
 
         // 创建控制台脚本快捷方式
-        file_put_contents($easyswooleRoot . 'easyswoole', "<?php\nrequire './vendor/bin/easyswoole';");
+        file_put_contents($easyswooleRoot . 'easyswoole', "<?php\nrequire '{$easyswooleBin}';");
 
         // 删除自身
         unlink($easyswooleRoot . 'App/Run.php');
