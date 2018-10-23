@@ -41,10 +41,7 @@ class Run
         $easyswooleResource = $easyswooleVendor . 'Resource' . DS;
 
         // 因为全新安装 不做检查直接覆盖
-        copy($easyswooleResource . 'Config.tpl', $easyswooleRoot . 'Config.php');
         copy($easyswooleResource . 'EasySwooleEvent.tpl', $easyswooleRoot . 'EasySwooleEvent.php');
-
-        // 新增环境配置文件
         copy($easyswooleResource . 'dev.env', $easyswooleRoot . 'dev.env');
         copy($easyswooleResource . 'produce.env', $easyswooleRoot . 'produce.env');
 
