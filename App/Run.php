@@ -37,7 +37,7 @@ class Run
         // 此时根包已就绪 强制将管理脚本链接到EASYSWOOLE的管理脚本上
         $easyswooleRoot = __DIR__ . DS . '..' . DS;
         $easyswooleVendor = $easyswooleRoot . 'vendor' . DS . 'easyswoole' . DS . 'easyswoole' . DS . 'src' . DS;
-        $easyswooleBin = './vendor/easyswoole/easyswoole/bin/easyswoole';
+        $easyswooleBin = './vendor/easyswoole/easyswoole/bin/easyswoole.php';
         $easyswooleResource = $easyswooleVendor . 'Resource' . DS;
 
         // 因为全新安装 不做检查直接覆盖

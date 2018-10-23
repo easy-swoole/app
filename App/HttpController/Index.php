@@ -2,7 +2,8 @@
 
 namespace App\HttpController;
 
-use EasySwoole\Core\Http\AbstractInterface\Controller;
+use EasySwoole\Http\AbstractInterface\Controller;
+
 
 /**
  * Class Index
