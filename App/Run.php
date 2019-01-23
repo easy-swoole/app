@@ -37,13 +37,13 @@ class Run
         // 此时根包已就绪 强制将管理脚本链接到EASYSWOOLE的管理脚本上
         $easyswooleRoot = __DIR__ . DS . '..' . DS;
         $easyswooleVendor = $easyswooleRoot . 'vendor' . DS . 'easyswoole' . DS . 'easyswoole' . DS . 'src' . DS;
-        $easyswooleBin = './vendor/easyswoole/easyswoole/bin/easyswoole.php';
+        $easyswooleBin = './vendor/easyswoole/easyswoole/bin/easyswoole';
         $easyswooleResource = $easyswooleVendor . 'Resource' . DS;
 
         // 因为全新安装 不做检查直接覆盖
         copy($easyswooleResource . 'EasySwooleEvent.tpl', $easyswooleRoot . 'EasySwooleEvent.php');
-        copy($easyswooleResource . 'config.env', $easyswooleRoot . 'dev.env');
-        copy($easyswooleResource . 'config.env', $easyswooleRoot . 'produce.env');
+        copy($easyswooleResource . 'Config.php', $easyswooleRoot . 'dev.php');
+        copy($easyswooleResource . 'Config.php', $easyswooleRoot . 'produce.php');
 
         // 创建临时目录
         @mkdir($easyswooleRoot . 'Temp', 0755) && chmod($easyswooleRoot . 'Temp', 0755);
