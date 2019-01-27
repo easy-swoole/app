@@ -42,8 +42,8 @@ class Run
 
         // 因为全新安装 不做检查直接覆盖
         copy($easyswooleResource . 'EasySwooleEvent.tpl', $easyswooleRoot . 'EasySwooleEvent.php');
-        copy($easyswooleResource . 'Config.php', $easyswooleRoot . 'dev.php');
-        copy($easyswooleResource . 'Config.php', $easyswooleRoot . 'produce.php');
+        copy($easyswooleResource . 'Config.tpl', $easyswooleRoot . 'dev.php');
+        copy($easyswooleResource . 'Config.tpl', $easyswooleRoot . 'produce.php');
 
         // 创建临时目录
         @mkdir($easyswooleRoot . 'Temp', 0755) && chmod($easyswooleRoot . 'Temp', 0755);
